@@ -31,7 +31,7 @@ function activateDarkTheme() {
     document.documentElement.classList.remove('theme--light');
 	document.getElementById("theme-toggle").className = 'light';
     window.localStorage.setItem('theme', 'dark');
-    document.getElementById("avatar").setAttribute("src", '{{ "/assets/avatar.svg" | relative_url }}');
+    document.getElementById("avatar").setAttribute("src", '{{ "/assets/white.svg" | relative_url }}');
 }
 
 function activateLightTheme() {
@@ -41,7 +41,7 @@ function activateLightTheme() {
     document.documentElement.classList.remove('theme--dark');
 	document.getElementById("theme-toggle").className = 'dark';
 	window.localStorage.setItem('theme', 'light');
-    document.getElementById("avatar").setAttribute("src", '{{ "/assets/favicon.svg" | relative_url }}');
+    document.getElementById("avatar").setAttribute("src", '{{ "/assets/black.svg" | relative_url }}');
 }
 
 if (theme === "dark") {
