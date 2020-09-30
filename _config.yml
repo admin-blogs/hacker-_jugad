@@ -2,10 +2,10 @@ title: Hacker's_Jugad
 author: Jugadi_Hacker
 email: jugadi.hacker@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in Information Tectnology. 
+  Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in IT. 
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 1
+paginate: 3
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty
