@@ -10,14 +10,12 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in Information Tectnology." />
 <meta property="og:description" content="Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in Information Tectnology." />
-<link rel="canonical" href="http://localhost:4000/tag/tutorial/" />
-<meta property="og:url" content="http://localhost:4000/tag/tutorial/" />
 <meta property="og:site_name" content="Hacker’s_Jugad" />
 <script type="application/ld+json">
-{"@type":"WebPage","url":"http://localhost:4000/tag/tutorial/","headline":"Hacker’s_Jugad","author":{"@type":"Person","name":"Jugadi_Hacker"},"description":"Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in Information Tectnology.","@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"/tag/tutorial/","headline":"Hacker’s_Jugad","author":{"@type":"Person","name":"Jugadi_Hacker"},"description":"Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in Information Tectnology.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" type="image/png" href="/assets/favicon.svg" /><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Hacker's_Jugad" /></head>
+  <link rel="icon" type="image/png" href="/assets/favicon.svg" /><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Hacker's_Jugad" /></head>
 <body><div class="site-header">
   <div class="wrapper">
     <a class="site-title" rel="author" href="/">Hacker&#39;s_Jugad<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
@@ -31,7 +29,7 @@
         
   <div class="author-box">
     
-<img src="/assets/favicon.svg" class="author-avatar" alt="Avatar" />
+<img src="/assets/favicon.svg" class="author-avatar" alt="Avatar" id="avatar"/>
 Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in Information Tectnology. 
 
 </div>
@@ -131,7 +129,8 @@ function activateDarkTheme() {
     document.documentElement.classList.add('theme--dark');
     document.documentElement.classList.remove('theme--light');
 	document.getElementById("theme-toggle").className = 'light';
-	window.localStorage.setItem('theme', 'dark');
+    window.localStorage.setItem('theme', 'dark');
+    document.getElementById("avatar").setAttribute("src", '/assets/favicon.svg');
 }
 
 function activateLightTheme() {
@@ -141,6 +140,7 @@ function activateLightTheme() {
     document.documentElement.classList.remove('theme--dark');
 	document.getElementById("theme-toggle").className = 'dark';
 	window.localStorage.setItem('theme', 'light');
+    document.getElementById("avatar").setAttribute("src", '/assets/favicon.png.old');
 }
 
 if (theme === "dark") {
