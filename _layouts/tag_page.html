@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-{% unless site.dash.show_author == false %}
+{% unless site.dash.show_author == true %}
   {% include author.html %}
 {% endunless %}
 <h1 class="post-title">articles tagged with <a class="tag" href="/tag/{{ page.tag }}/">{{ page.tag }}</a></h1>

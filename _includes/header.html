@@ -4,5 +4,14 @@
     <span class="social_links">
         {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
     </span>
+    <br>
+    <span class="nav">
+      <a href="{{"/books" | relative_url }}">Books</a>
+      <a href="{{"/request" | relative_url }}">Request Content</a>
+      <a href="{{"/howtodownload" | relative_url }}">How to download</a>
+      {% comment %} <a href="{{"/donate" | relative_url }}">Donate</a> {% endcomment %}
+      {% comment %} <a href="{{"/help" | relative_url }}">Help</a> {% endcomment %}
+    </span>
+    
   </div>
 </div>

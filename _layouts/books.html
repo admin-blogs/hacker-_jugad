@@ -1,0 +1,26 @@
+---
+layout: default
+---
+{% unless site.dash.show_author == false %}
+  {% include author.html %}
+{% endunless %}
+<h1>Books</h1>
+<!--page_header-->
+<div class="main">
+    <ul class="cards">
+    {% for book in site.data.books %}
+    <!--split-->
+    <li class="card-item">
+        {% assign url = '/assets/thumbs/' | append:book.img %}
+        <div class="card">
+          <div class="card_image"><img src="{{ url | relative_url}}"></div>
+          <div class="card_content">
+            <h2>{{book.name}}</h2>
+            <a class="btn card_btn" href="{{book.links}}">Download</a>
+          </div>
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+<!--page_footer-->

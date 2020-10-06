@@ -1,11 +1,11 @@
-title: Hacker's_Jugad
-author: Jugadi_Hacker
-email: jugadi.hacker@gmail.com
+title: Hacker's Jugad
+author: Hackers Jugad
+email: hackersjugad@gmail.com
 description: > # this means to ignore newlines until "show_exerpts:"
-  Hi there, We provide content on various IT (Information Technology) concepts like Hacking, Cyber Security, Linux, Unix, Operationg System, Windows, Syatem administration and various tools that will help you to made your career in IT. 
+  Hi there, We provide <strong>web-series, movies</strong> download links, blogs and video tutorials on <strong>hacking, cyber security, linux, unix, and windows</strong> tips and triks. You can request content by going to <strong><a href='/request'>Request content</a></strong> page. You can search content by clicking on related tag, all tags are available on the bottom of the site. 
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 3
+paginate: 5
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty
@@ -18,20 +18,14 @@ dash:
   date_format: "%b %-d, %Y"
 
   disqus:
-    shortname: jugadi_hacker
+    shortname: hackersjugad-github-io
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://twitter.com/bitbrain_
-      
-      color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
-      color: red
-    - url: https://github.com/bitbrain
-      icon: github-square
-      color: purple
+    # - url: https://github.com/bitbrain
+    #   icon: github-square
+    #   color: purple
 
   show_author: true
 
@@ -46,7 +40,25 @@ plugins:
  - jekyll-paginate
  - liquid-md5
  - jekyll/tagging
-
+ - jekyll-sitemap
+ - jekyll-paginate-content
+ 
 # Replaces the default avatar provider (gravatar)
 #avatar_source: github
 #github_username: bitbrain
+
+collections:
+  books:
+    output: true
+ 
+
+# paginate_content:
+#   debug: true
+#   collections: books, posts
+
+# autopages:
+#   enable: true
+#   collections:
+#     enabled: true
+#   tags:
+#     enabled: false

@@ -1,0 +1,59 @@
+---
+layout: post
+title: Request content
+description: Anyting you want just write here. We will try to provide as soon as possible.
+---
+<style>
+*{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+input[type="text"], [type="email"], textarea{
+  padding: 5px 5px 5px 10px;
+  outline: none;
+  font-size: 1.1rem;
+  border-radius: 5px;
+  {% comment %} border: 1px solid #888888; {% endcomment %}
+  border: none;
+  background-color: rgba(126, 126, 126, 0.12);
+}
+button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  padding: .5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  background-color: rgba(126, 126, 126, 0.12);
+}
+button:hover{
+  text-decoration: none !important;
+}
+
+.post-date{
+  display: none;
+}
+</style>
+
+<div class="post">
+  {% comment %} {% if site.dash.disqus.shortname %}
+    <div class="comments">
+      {% include disqus.html %}
+    </div>
+  {% endif %} {% endcomment %}
+
+  <form action="https://send.pageclip.co/b3xd4x67AFF1UhdnWSV9BHAF239HE4j7" class="pageclip-form" method="post">
+    <!-- Replace these inputs with your own. Make sure they have a "name" attribute! -->
+    <input type="text" name="name" placeholder="Your name" />
+    <input type="email" name="email" placeholder="yourmail@example.com" />
+    <textarea cols="30" rows="10" placeholder="write here..."></textarea>
+    <!-- This button will have a loading spinner. Keep the inner span for best results. -->
+    <button type="submit" class="pageclip-form__submit">
+      <span>Send</span>
+    </button>
+  </form>
+  <br>
+  <p><a href="{{ "/" | relative_url }}">Go To Home</a></p>
+</div>
+<script src="https://s.pageclip.co/v1/pageclip.js" charset="utf-8"></script>

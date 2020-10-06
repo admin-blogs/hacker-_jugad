@@ -5,7 +5,9 @@ PATH
       jekyll (~> 3.5)
       jekyll-feed (~> 0.9)
       jekyll-paginate
+      jekyll-paginate-content
       jekyll-seo-tag (~> 2.1)
+      jekyll-sitemap
 
 GEM
   remote: https://rubygems.org/
@@ -39,10 +41,14 @@ GEM
     jekyll-feed (0.15.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-paginate (1.1.0)
+    jekyll-paginate-content (1.1.0)
+      jekyll (~> 3.0)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
     jekyll-seo-tag (2.6.1)
       jekyll (>= 3.3, < 5.0)
+    jekyll-sitemap (1.4.0)
+      jekyll (>= 3.7, < 5.0)
     jekyll-tagging (1.1.0)
       nuggets
     jekyll-watch (2.2.1)
