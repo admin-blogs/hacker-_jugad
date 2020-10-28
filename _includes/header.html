@@ -2,16 +2,96 @@
   <div class="wrapper">
     <a class="site-title" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
-        {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
+        {% for link in site.dash.social_links %}<a class="color-{{ link.color }}-hover" href="{{ link.url }}" target="_blank"><i class="fab fa-{{ link.icon }}"></i></a>{% endfor %}
     </span>
-    <br>
-    <span class="nav">
-      <a href="{{"/books" | relative_url }}">Books</a>
-      <a href="{{"/request" | relative_url }}">Request Content</a>
-      <a href="{{"/howtodownload" | relative_url }}">How to download</a>
-      {% comment %} <a href="{{"/donate" | relative_url }}">Donate</a> {% endcomment %}
-      {% comment %} <a href="{{"/help" | relative_url }}">Help</a> {% endcomment %}
-    </span>
-    
+    <div class="pc-nav">
+      {% comment %} <span class="collapse">
+        <a href="#" onclick="showmenu();">
+          <i class="fa fa-bars"></i>
+        </a>
+      </span> {% endcomment %}
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="{{"/books" | relative_url }}">Books</a>
+          </li>
+          <li>
+            <a href="{{"/request" | relative_url }}">Request Content</a>
+          </li>
+          <li>
+            <a href="{{"/howtodownload" | relative_url }}" class="how-to-download">How to download</a>
+          </li>
+          <!-- <li>
+            <a href="{{"/donate" | relative_url }}">Donate</a>
+          </li>
+          <li>
+            <a href="{{"/help" | relative_url }}">Help</a>
+          </li> -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="wrapper pc-nav">
+    <nav>
+      <ul>
+        <li>
+          <a href="http://imageoptimizer.glitch.me/" target="_blank">Image Optimizer</a>
+        </li>
+        <li>
+          <a href="https://browseranalyzer.glitch.me/analyzer.html" target="_blank">Browser Analyzer</a>
+        </li>
+        <li>
+          <a href="http://issinfo.glitch.me/" target="_blank">ISS Info</a>
+        </li>
+        <li>
+          <a href="https://appetize.io/embed/k6ukq07zqmw445u326mnd2efa4" target="_blank" rel="noreferrer">Virtual Android</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="m-nav">
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span class="menu-icon"></span><strong class="menu-text">MENU </strong> <img src="{{ "/assets/white.svg" | relative_url }}" id="menu" /></label>
+    <div id="overlay">
+      <ul>
+        <li>
+          <a href="{{"/books" | relative_url }}">Books</a>
+        </li>
+        <li>
+          <a href="{{"/request" | relative_url }}">Request Content</a>
+        </li>
+        <li>
+          <a href="{{"/howtodownload" | relative_url }}" class="how-to-download">How to download</a>
+        </li>
+        <li>
+          <a href="http://imageoptimizer.glitch.me/" target="_blank">Image Optimizer</a>
+        </li>
+        <li>
+          <a href="https://browseranalyzer.glitch.me/analyzer.html" target="_blank">Browser Analyzer</a>
+        </li>
+        <li>
+          <a href="http://issinfo.glitch.me/" target="_blank">ISS Info</a>
+        </li>
+        <li>
+          <a href="https://appetize.io/embed/k6ukq07zqmw445u326mnd2efa4" target="_blank" rel="noreferrer">Virtual Android</a>
+        </li>
+    </ul>
+    </div>
   </div>
 </div>
+<script>
+var a = 0;
+function showmenu()
+{
+    var x = document.getElementById('nav');
+    x.classList.toggle('show');
+    x.classList.toggle('animated');
+    if ( a === 0) {
+        x.style.display = 'block';
+        a=1;
+    } else {
+        x.style.display = 'none';
+        a=0;
+    }
+}
+</script>

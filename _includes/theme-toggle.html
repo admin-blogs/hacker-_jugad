@@ -32,6 +32,7 @@ function activateDarkTheme() {
 	document.getElementById("theme-toggle").className = 'light';
     window.localStorage.setItem('theme', 'dark');
     document.getElementById("avatar").setAttribute("src", '{{ "/assets/white.svg" | relative_url }}');
+    document.getElementById("menu").setAttribute("src", '{{ "/assets/black.svg" | relative_url }}');
 }
 
 function activateLightTheme() {
@@ -42,6 +43,7 @@ function activateLightTheme() {
 	document.getElementById("theme-toggle").className = 'dark';
 	window.localStorage.setItem('theme', 'light');
     document.getElementById("avatar").setAttribute("src", '{{ "/assets/black.svg" | relative_url }}');
+    document.getElementById("menu").setAttribute("src", '{{ "/assets/white.svg" | relative_url }}');
 }
 
 if (theme === "dark") {

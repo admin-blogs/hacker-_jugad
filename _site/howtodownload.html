@@ -15,25 +15,110 @@
 {"@type":"WebPage","url":"/howtodownload.html","headline":"how to download gplinks","author":{"@type":"Person","name":"Hackers Jugad"},"description":"In this post i will show you how to download from links provided in this site.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="icon" type="image/png" href="/assets/black.svg"/><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Hacker's Jugad" /><script data-ad-client="ca-pub-8367357551397143" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <link rel="icon" type="image/png" href="/assets/black.svg"/><link type="application/atom+xml" rel="alternate" href="/feed.xml" title="Hacker's Jugad" /><!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180273550-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-180273550-1');
+  </script>
+
 </head>
 <body><div class="site-header">
   <div class="wrapper">
     <a class="site-title" rel="author" href="/">Hacker&#39;s Jugad<b class="command_prompt"></b><b class="blinking_cursor">_</b></a>
     <span class="social_links">
-        
+        <a class="color-blue-hover" href="https://t.me/hackersjugad" target="_blank"><i class="fab fa-telegram"></i></a>
     </span>
-    <br>
-    <span class="nav">
-      <a href="/books">Books</a>
-      <a href="/request">Request Content</a>
-      <a href="/howtodownload">How to download</a>
+    <div class="pc-nav">
       
-      
-    </span>
-    
+      <nav id="nav">
+        <ul>
+          <li>
+            <a href="/books">Books</a>
+          </li>
+          <li>
+            <a href="/request">Request Content</a>
+          </li>
+          <li>
+            <a href="/howtodownload" class="how-to-download">How to download</a>
+          </li>
+          <!-- <li>
+            <a href="/donate">Donate</a>
+          </li>
+          <li>
+            <a href="/help">Help</a>
+          </li> -->
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="wrapper pc-nav">
+    <nav>
+      <ul>
+        <li>
+          <a href="http://imageoptimizer.glitch.me/" target="_blank">Image Optimizer</a>
+        </li>
+        <li>
+          <a href="https://browseranalyzer.glitch.me/analyzer.html" target="_blank">Browser Analyzer</a>
+        </li>
+        <li>
+          <a href="http://issinfo.glitch.me/" target="_blank">ISS Info</a>
+        </li>
+        <li>
+          <a href="https://appetize.io/embed/k6ukq07zqmw445u326mnd2efa4" target="_blank" rel="noreferrer">Virtual Android</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="m-nav">
+    <input type="checkbox" id="overlay-input" />
+    <label for="overlay-input" id="overlay-button"><span class="menu-icon"></span><strong class="menu-text">MENU </strong> <img src="/assets/white.svg" id="menu" /></label>
+    <div id="overlay">
+      <ul>
+        <li>
+          <a href="/books">Books</a>
+        </li>
+        <li>
+          <a href="/request">Request Content</a>
+        </li>
+        <li>
+          <a href="/howtodownload" class="how-to-download">How to download</a>
+        </li>
+        <li>
+          <a href="http://imageoptimizer.glitch.me/" target="_blank">Image Optimizer</a>
+        </li>
+        <li>
+          <a href="https://browseranalyzer.glitch.me/analyzer.html" target="_blank">Browser Analyzer</a>
+        </li>
+        <li>
+          <a href="http://issinfo.glitch.me/" target="_blank">ISS Info</a>
+        </li>
+        <li>
+          <a href="https://appetize.io/embed/k6ukq07zqmw445u326mnd2efa4" target="_blank" rel="noreferrer">Virtual Android</a>
+        </li>
+    </ul>
+    </div>
   </div>
 </div>
+<script>
+var a = 0;
+function showmenu()
+{
+    var x = document.getElementById('nav');
+    x.classList.toggle('show');
+    x.classList.toggle('animated');
+    if ( a === 0) {
+        x.style.display = 'block';
+        a=1;
+    } else {
+        x.style.display = 'none';
+        a=0;
+    }
+}
+</script>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
         
@@ -42,8 +127,73 @@
 <img src="/assets/white.svg" class="author-avatar" alt="Avatar" id="avatar"/>
 Hi there, We provide <strong>web-series, movies</strong> download links, blogs and video tutorials on <strong>hacking, cyber security, linux, unix, and windows</strong> tips and triks. You can request content by going to <strong><a href='/request'>Request content</a></strong> page. You can search content by clicking on related tag, all tags are available on the bottom of the site. 
 
+</div><div class="toggleWrapper">
+    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
+    <label for="theme-toggle" class="toggle">
+    <span class="toggle__handler">
+      <span class="crater crater--1"></span>
+      <span class="crater crater--2"></span>
+      <span class="crater crater--3"></span>
+    </span>
+        <span class="star star--1"></span>
+        <span class="star star--2"></span>
+        <span class="star star--3"></span>
+        <span class="star star--4"></span>
+        <span class="star star--5"></span>
+        <span class="star star--6"></span>
+    </label>
 </div>
+<script type="text/javascript">
+const theme = localStorage.getItem('theme');
 
+if (theme === "light") {
+    document.documentElement.setAttribute('data-theme', 'light');
+} else {
+    document.documentElement.setAttribute('data-theme', 'dark');
+}
+const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
+
+function activateDarkTheme() {
+    document.getElementById('theme-toggle').checked = true;
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.classList.add('theme--dark');
+    document.documentElement.classList.remove('theme--light');
+	document.getElementById("theme-toggle").className = 'light';
+    window.localStorage.setItem('theme', 'dark');
+    document.getElementById("avatar").setAttribute("src", '/assets/white.svg');
+    document.getElementById("menu").setAttribute("src", '/assets/black.svg');
+}
+
+function activateLightTheme() {
+    document.getElementById('theme-toggle').checked = false;
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.documentElement.classList.add('theme--light');
+    document.documentElement.classList.remove('theme--dark');
+	document.getElementById("theme-toggle").className = 'dark';
+	window.localStorage.setItem('theme', 'light');
+    document.getElementById("avatar").setAttribute("src", '/assets/black.svg');
+    document.getElementById("menu").setAttribute("src", '/assets/white.svg');
+}
+
+if (theme === "dark") {
+    activateDarkTheme();
+} else if (theme === "light") {
+    activateLightTheme();
+} else if  (userPrefers === "light") {
+    activateDarkTheme();
+} else {
+    activateDarkTheme();
+}
+
+function modeSwitcher() {
+	let currentMode = document.documentElement.getAttribute('data-theme');
+	if (currentMode === "dark") {
+	    activateLightTheme();
+	} else {
+	    activateDarkTheme();
+	}
+}
+</script>
 
 <div class="post">
   <h1 class="post-title">how to download gplinks</h1>
@@ -59,7 +209,10 @@ Hi there, We provide <strong>web-series, movies</strong> download links, blogs a
   </noscript>
   <div id="animated-post-description" class="post-description" style="display: none;"></div>
   
-  <p>hello everyone in this tutorial i will show you how you can download from gplink urls (that are used in this site to).</p>
+  <p>.</p>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/4QqBtJOQmhw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+
+<p>hello everyone in this tutorial i will show you how you can download from gplink urls (that are used in this site to).</p>
 
 <h3 id="step-1">step 1</h3>
 
@@ -109,13 +262,36 @@ Hi there, We provide <strong>web-series, movies</strong> download links, blogs a
 
 
 
+<div class="comments">
+<br>
+<div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+        this.page.url = '/howtodownload.html';
+        this.page.identifier = '';
+        this.page.title = 'how to download gplinks';
+    };
+
+
+    (function() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://hackersjugad.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                            
+</div>
+
 
 
 
 
   
   <h2>all tags</h2>
-  <div class="tag-cloud"><a href="/tag/action/" class="set-1">action</a> <a href="/tag/amazon-prime-videos/" class="set-1">amazon-prime-videos</a> <a href="/tag/books/" class="set-1">books</a> <a href="/tag/comedy/" class="set-3">comedy</a> <a href="/tag/download/" class="set-5">download</a> <a href="/tag/drama/" class="set-5">drama</a> <a href="/tag/hacking-books/" class="set-1">hacking-books</a> <a href="/tag/history/" class="set-1">history</a> <a href="/tag/information-technology/" class="set-1">information-technology</a> <a href="/tag/it-books/" class="set-1">it-books</a> <a href="/tag/movie/" class="set-3">movie</a> <a href="/tag/netflix/" class="set-1">netflix</a> <a href="/tag/tv-series/" class="set-1">tv-series</a> <a href="/tag/zee-studios/" class="set-1">zee-studios</a></div>
+  <div class="tag-cloud"><a href="/tag/action/" class="set-2">action</a> <a href="/tag/adventure/" class="set-1">adventure</a> <a href="/tag/amazon-prime/" class="set-1">amazon-prime</a> <a href="/tag/amazon-prime-videos/" class="set-1">amazon-prime-videos</a> <a href="/tag/animation/" class="set-1">animation</a> <a href="/tag/biography/" class="set-1">biography</a> <a href="/tag/books/" class="set-1">books</a> <a href="/tag/comedy/" class="set-3">comedy</a> <a href="/tag/coronavirus/" class="set-1">coronavirus</a> <a href="/tag/crime/" class="set-1">crime</a> <a href="/tag/download/" class="set-5">download</a> <a href="/tag/drama/" class="set-3">drama</a> <a href="/tag/family/" class="set-1">family</a> <a href="/tag/fantasy/" class="set-1">fantasy</a> <a href="/tag/hacking-books/" class="set-1">hacking-books</a> <a href="/tag/history/" class="set-1">history</a> <a href="/tag/horror/" class="set-1">horror</a> <a href="/tag/information-technology/" class="set-1">information-technology</a> <a href="/tag/it-books/" class="set-1">it-books</a> <a href="/tag/mirzapur/" class="set-1">mirzapur</a> <a href="/tag/movie/" class="set-4">movie</a> <a href="/tag/mystery/" class="set-1">mystery</a> <a href="/tag/netflix/" class="set-2">netflix</a> <a href="/tag/romance/" class="set-2">romance</a> <a href="/tag/sonyliv/" class="set-1">sonyliv</a> <a href="/tag/thriller/" class="set-1">thriller</a> <a href="/tag/tv-series/" class="set-1">tv-series</a> <a href="/tag/zee-studios/" class="set-1">zee-studios</a> <a href="/tag/zee5/" class="set-1">zee5</a></div>
   
 
 
@@ -141,71 +317,9 @@ Hi there, We provide <strong>web-series, movies</strong> download links, blogs a
       </div>
     </main><footer class="site-footer">
   <div class="wrapper">
-    <div class="credits">&copy; hacker's_jugad <a href="/credits"> credits</a></i><div class="toggleWrapper">
-    <input type="checkbox" class="dn" id="theme-toggle" onclick="modeSwitcher()" checked />
-    <label for="theme-toggle" class="toggle">
-    <span class="toggle__handler">
-      <span class="crater crater--1"></span>
-      <span class="crater crater--2"></span>
-      <span class="crater crater--3"></span>
-    </span>
-        <span class="star star--1"></span>
-        <span class="star star--2"></span>
-        <span class="star star--3"></span>
-        <span class="star star--4"></span>
-        <span class="star star--5"></span>
-        <span class="star star--6"></span>
-    </label>
-</div>
-<script type="text/javascript">
-const theme = localStorage.getItem('theme');
-
-if (theme === "light") {
-    document.documentElement.setAttribute('data-theme', 'light');
-} else {
-    document.documentElement.setAttribute('data-theme', 'dark');
-}
-const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
-
-function activateDarkTheme() {
-    document.getElementById('theme-toggle').checked = true;
-    document.documentElement.setAttribute('data-theme', 'dark');
-    document.documentElement.classList.add('theme--dark');
-    document.documentElement.classList.remove('theme--light');
-	document.getElementById("theme-toggle").className = 'light';
-    window.localStorage.setItem('theme', 'dark');
-    document.getElementById("avatar").setAttribute("src", '/assets/white.svg');
-}
-
-function activateLightTheme() {
-    document.getElementById('theme-toggle').checked = false;
-    document.documentElement.setAttribute('data-theme', 'light');
-    document.documentElement.classList.add('theme--light');
-    document.documentElement.classList.remove('theme--dark');
-	document.getElementById("theme-toggle").className = 'dark';
-	window.localStorage.setItem('theme', 'light');
-    document.getElementById("avatar").setAttribute("src", '/assets/black.svg');
-}
-
-if (theme === "dark") {
-    activateDarkTheme();
-} else if (theme === "light") {
-    activateLightTheme();
-} else if  (userPrefers === "light") {
-    activateDarkTheme();
-} else {
-    activateDarkTheme();
-}
-
-function modeSwitcher() {
-	let currentMode = document.documentElement.getAttribute('data-theme');
-	if (currentMode === "dark") {
-	    activateLightTheme();
-	} else {
-	    activateDarkTheme();
-	}
-}
-</script></div>
+    <div class="credits">&copy; hacker's_jugad <a href="/credits"> credits</a></i>
+      
+    </div>
   </div>
 </footer>
 

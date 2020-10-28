@@ -1,6 +1,6 @@
 .site-header {
   min-height: $spacing-unit * 1.865;
-  line-height: $base-line-height * $base-font-size * 2.25;
+  line-height: $base-line-height * $base-font-size * 2;
 
   // Positioning context for the mobile navigation icon
   position: relative;
@@ -21,12 +21,6 @@
       margin-right: 0.2em;
     }
   }
-  .nav{
-    float: right;
-    a:not(:last-child){
-      margin-right: 1rem;
-    }
-  }
 }
 
 .site-title {
@@ -36,7 +30,7 @@
   // float: left;
 
   @include media-query($on-palm) {
-    padding-right: 45px;
+    padding-right: 15px;
   }
 
   &,
@@ -56,6 +50,81 @@
 .wrapper {
   text-align: justify;
 }
+
+
+// navbar
+#nav{
+  display: block;
+  float: right;
+
+}
+
+nav > ul{
+  margin: 0;
+  padding: 0;
+  flex:0;
+  flex-basis: max-content;
+  flex-grow: inherit;
+}
+
+
+nav ul > li {
+  display: inline-block;
+  transition: all 1s ease;
+  &:not(:last-child){
+    margin-right: 1rem;
+  }
+}
+.collapse a .fa {
+  font-size: 1.5rem;
+}
+
+/* End Navbar */
+
+/* Start Menu Right */
+.collapse {
+  position: relative;
+  float: right;
+  padding-top: 7px;
+  padding-right: 1rem;
+  display: none;
+}
+.show{
+  opacity:0;
+}
+.animated{
+  animation: appear .5s ease-in;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes appear {
+  0% {
+      opacity: 0;
+      flex: 0;
+  }
+  100% {
+      height: 100%;
+      flex-basis: auto;
+      flex-grow: 1;
+      opacity: 1;
+      flex: 1;
+  }
+}
+
+@media screen and (max-width:526px){
+  .pc-nav{
+    display: none;
+  }
+  .m-nav{
+    display: block;
+  }
+}
+@media screen and (min-width:527px){
+  .m-nav{
+    display: none;
+  }
+}
+
 
 /**
  * Author box
@@ -450,7 +519,7 @@ input[type="text"], [type="email"], textarea{
     }
     display: inline-block;
     padding-left: 0.3em;
-    font-size: $post-link-font-size * 1.35;
+    font-size: $post-link-font-size * 1.55;
   }
 }
 
@@ -505,4 +574,171 @@ ul.related-posts {
         }
         color: $color-yellow;
     }
+}
+
+
+// remove pop up button from emmbeded code
+.responsive-container {
+  position:relative;
+  padding-bottom:56.25%;
+  padding-top:30px;
+  height:0;
+  overflow:hidden;
+  }
+  
+  .responsive-container iframe, .responsive-container object, .responsive-container embed {
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  }
+
+// Navbar mobile
+@keyframes bugfix { from {padding:0;} to {padding:0;}}
+@-webkit-keyframes bugfix { from {padding:0;} to {padding:0;}}
+
+#overlay-button {
+  position: fixed;
+  right: .5em;
+  bottom: .5em;
+  // padding: 26px 11px;
+  z-index: 5;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 32px;
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  height: 48px;
+  @include themed() {
+    color: t('background-color');
+  }
+  overflow: hidden;
+  @include themed() {
+    background-color: t('foreground-color');
+  }
+  img{
+    height: 40px;
+    margin-left: 6px;
+  }
+  span {
+      height: 4px;
+      width: 35px;
+      margin-top: 20px;
+      border-radius: 2px;
+      @include themed() {
+        background-color: t('background-color');
+      };
+      position: relative;
+      display: block;
+      transition-delay: .3s;
+      transition: all .5s ease-in-out;
+      &:before {
+        top: -10px;
+        visibility: visible;
+      }
+      &:after {
+        top: 10px;
+      }
+      &:before, &:after {
+          height: 4px;
+          width: 35px;
+          border-radius: 2px;
+          @include themed() {
+            background-color: t('background-color');
+          };
+          position: absolute;
+          content: "";
+          transition-delay: .3s;
+          transition: all .5s ease-in-out;
+      }
+    }
+    &:hover span, &:hover span:before, &:hover span:after {
+      @include themed() {
+        background-color: lighten(t('background-color'), 20%);
+      };
+    }
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+input[type=checkbox]:checked ~ #overlay {
+  visibility: visible;
+}
+
+input[type=checkbox]:not(:checked) ~ #overlay-button{
+  .menu-icon{
+    display: none;
+  }
+}
+
+input[type=checkbox]:checked ~ #overlay-button {
+  &:hover span, span{
+    background: transparent;
+    &:before {
+      transform: rotate(45deg) translate(7px, 7px);
+      opacity: 1;
+    }
+    &:after {
+      transform: rotate(-45deg) translate(7px, -7px);
+    }
+  }
+  .menu-icon{
+    display: block;
+  }
+  .menu-text{
+    display: none;
+  }
+}
+
+#overlay {
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  &.active {
+    visibility: visible;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    margin: 0 .5em 0 0;
+    position: fixed;
+    right: 0;
+    bottom: 57px; 
+    list-style-type: none;
+    li {
+      margin-bottom: .7em;
+      border-radius: 32px;
+      padding-left: 15px;
+      padding-right: 15px;
+      height: 35px;
+      line-height: normal !important;
+      display: flex;
+      align-items: center;
+      @include themed() {
+        color: t('background-color');
+      }
+      overflow: hidden;
+      @include themed() {
+        background-color: t('foreground-color');
+      }
+      a {
+        text-decoration: none;
+        font-size: 1.2em;
+        &:hover {
+          @include themed() {
+            color: t('background-color');
+          }
+        }
+      }
+    }
+  }
 }

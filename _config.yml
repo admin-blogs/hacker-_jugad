@@ -5,7 +5,7 @@ description: > # this means to ignore newlines until "show_exerpts:"
   Hi there, We provide <strong>web-series, movies</strong> download links, blogs and video tutorials on <strong>hacking, cyber security, linux, unix, and windows</strong> tips and triks. You can request content by going to <strong><a href='/request'>Request content</a></strong> page. You can search content by clicking on related tag, all tags are available on the bottom of the site. 
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 5
+paginate: 10
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty
@@ -23,6 +23,9 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
+    - url: https://t.me/hackersjugad
+      icon: telegram
+      color: blue
     # - url: https://github.com/bitbrain
     #   icon: github-square
     #   color: purple
@@ -47,8 +50,15 @@ plugins:
 #avatar_source: github
 #github_username: bitbrain
 
+
 collections:
   books:
+    output: true
+  mirzapur:
+    output: true
+  scam1992:
+    output: true
+  movies:
     output: true
  
 

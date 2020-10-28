@@ -2,7 +2,10 @@
 layout: post
 title: how to download gplinks
 description: In this post i will show you how to download from links provided in this site. 
+disqus: true
 ---
+.
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/4QqBtJOQmhw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 hello everyone in this tutorial i will show you how you can download from gplink urls (that are used in this site to).
 
