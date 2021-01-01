@@ -1,3 +1,6 @@
+{% comment %} <div class="theme-toggle-placement">
+    {%- include theme-toggle.html -%}
+</div> {% endcomment %}
 <div class="author-box">
     {% comment %} {% if site.avatar_source == "github" and site.github_username %}
         {% capture avatar_image %}
@@ -15,3 +18,33 @@
 {{ site.description }}
 </div>
 {%- include theme-toggle.html -%}
+
+
+<!-- Html Elements for Search -->
+<div id="search-container">
+{% if page.title == "Movies" %}
+<input type="text" id="search-input" placeholder="search movie ...">
+{% elsif page.title == "Web-Series" %}
+<input type="text" id="search-input" placeholder="search web-series ...">
+{% else %}
+<input type="text" id="search-input" placeholder="search...">
+{% endif %}
+<ul id="results-container" class="search-result"></ul>
+</div>
+
+
+<!-- Script pointing to search-script.js -->
+<script src='{{"/assets/js/search-script.js" | relative_url }}' ></script>
+
+<!-- Configuration -->
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  {% if page.search_file %}
+  json: '/{{ page.search_file }}'
+  {% else %}
+  json: '/search.json'
+  {% endif %}
+})
+</script>

@@ -11,12 +11,12 @@ layout: default
     {% for book in site.data.books %}
     <!--split-->
     <li class="card-item">
-        {% assign url = '/assets/thumbs/' | append:book.img %}
+        {% assign url = '/assets/thumbs/books/' | append:book.img %}
         <div class="card">
           <div class="card_image"><img src="{{ url | relative_url}}"></div>
           <div class="card_content">
-            <h2>{{book.name}}</h2>
-            <a class="btn card_btn" href="{{book.links}}">Download</a>
+            <h2 title="{{book.name}}">{{book.name | truncate: 25, '...'}}</h2>
+            <a class="btn card_btn" href="{{book.url}}">Download</a>
           </div>
         </div>
     </li>

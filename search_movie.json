@@ -1,0 +1,11 @@
+---
+---
+[
+  {% for movie in site.data.movies %}
+    {
+      "title"    : "{{ movie.name | strip_html | escape }}",
+      "url"      : "{{ site.baseurl }}/{{ movie.url }}",
+      "desc"     : "{{ movie.name | strip_html | escape }}"
+    } {% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]

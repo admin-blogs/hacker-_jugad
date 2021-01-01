@@ -1,0 +1,26 @@
+div.my-notification {
+  transition: 0.5s ease all;
+}
+.my-notification {
+  display: block;
+  position: fixed;
+  cursor: pointer;
+  animation: 0.5s ease all;
+  transform: translateX(-100%);
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: lighten($color-background-dark, 5%);
+}
+
+.notification {
+  > .wrapper {
+    > p {
+      padding-top: 10px;
+    }
+  }
+}
+.notify {
+  transform: translateX(0%) !important;
+}

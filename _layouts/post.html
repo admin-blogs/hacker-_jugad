@@ -1,6 +1,14 @@
 ---
 layout: default
 ---
+
+<style>
+  .card_btn{
+    display: block;
+    width: auto;
+  }
+</style>
+
 {% unless site.dash.show_author == false %}
   {% include author.html %}
 {% endunless %}
@@ -13,10 +21,12 @@ layout: default
       {% endfor %}
   </div>
   {% endif %}
+  {% if page.date%}
   <div class="post-date">Published on {{ page.date | date_to_string }}</div>
+  {% endif %}
   {% if page.description != null %}
   <noscript>
-    <div class="post-description">{{ page.description }}</div>
+    <div class="post-description">{{ page.description | escape}}<div>
   </noscript>
   <div id="animated-post-description" class="post-description" style="display: none;"></div>
   {% endif %}

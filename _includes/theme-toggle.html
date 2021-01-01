@@ -14,7 +14,7 @@
         <span class="star star--6"></span>
     </label>
 </div>
-<script type="text/javascript">
+<script> 
 const theme = localStorage.getItem('theme');
 
 if (theme === "light") {
@@ -25,27 +25,36 @@ if (theme === "light") {
 const userPrefers = getComputedStyle(document.documentElement).getPropertyValue('content');
 
 function activateDarkTheme() {
+    try {
     document.getElementById('theme-toggle').checked = true;
     document.documentElement.setAttribute('data-theme', 'dark');
     document.documentElement.classList.add('theme--dark');
     document.documentElement.classList.remove('theme--light');
 	document.getElementById("theme-toggle").className = 'light';
     window.localStorage.setItem('theme', 'dark');
-    document.getElementById("avatar").setAttribute("src", '{{ "/assets/white.svg" | relative_url }}');
     document.getElementById("menu").setAttribute("src", '{{ "/assets/black.svg" | relative_url }}');
+    document.getElementById("avatar").setAttribute("src", '{{ "/assets/white.svg" | relative_url }}');
+    }
+    catch (error) {
+      console.log(error);  
+    }
 }
 
 function activateLightTheme() {
+    try {
     document.getElementById('theme-toggle').checked = false;
     document.documentElement.setAttribute('data-theme', 'light');
     document.documentElement.classList.add('theme--light');
     document.documentElement.classList.remove('theme--dark');
 	document.getElementById("theme-toggle").className = 'dark';
 	window.localStorage.setItem('theme', 'light');
-    document.getElementById("avatar").setAttribute("src", '{{ "/assets/black.svg" | relative_url }}');
     document.getElementById("menu").setAttribute("src", '{{ "/assets/white.svg" | relative_url }}');
+    document.getElementById("avatar").setAttribute("src", '{{ "/assets/black.svg" | relative_url }}');
+    }
+    catch (error) {
+     console.log(error);   
+    }
 }
-
 if (theme === "dark") {
     activateDarkTheme();
 } else if (theme === "light") {

@@ -1,12 +1,46 @@
 ---
 layout: default
 ---
+
 {% unless site.dash.show_author == false %}
   {% include author.html %}
 {% endunless %}
+{% comment %} <h1 class="featured" style="text-align: center;">Laxmii is now available</h1>
+<br> {% endcomment %}
+<!-- Featured movies -->
+<h1 class="featured">Featured Movies</h1>
+<div class="carousel-cover">
+  <button id="slideLeft1" type="button"><span class="fa fa-angle-left"></span></button>
+  <div class="carousel-body" id="carousel-body1">
+    {% for movie in site.data.featuredmovies %}
+      {% assign url = '/assets/thumbs/movies/' | append:movie.img %}
+      <a href="{{movie.url | relative_url}}" title="{{movie.name}}">
+        <img class="carousel-img" src="{{ url | relative_url}}" alt="{{movie.name}}" width="120" height="177"> 
+      </a>
+    {% endfor %}
+  </div>
+  <button id="slideRight1" type="button"><span class="fa fa-angle-right"></span></button>
+</div>
+
+<!-- Featured web-series -->
+<h1 class="featured">Featured Web Series</h1>
+<div class="carousel-cover">
+  <button id="slideLeft2" type="button"><span class="fa fa-angle-left"></span></button>
+  <div class="carousel-body" id="carousel-body2">
+    {% for series in site.data.featuredseries %}
+      {% assign url = '/assets/thumbs/series/' | append:series.img %}
+      <a href="{{series.url | relative_url}}" title="{{series.name}}">
+        <img class="carousel-img" src="{{ url | relative_url}}" alt="{{series.name}}" width="120" height="177">
+      </a>
+    {% endfor %}
+  </div>
+  <button id="slideRight2" type="button"><span class="fa fa-angle-right"></span></button>
+</div>
+
+<!-- recent posts -->
 {% assign posts_count = paginator.posts | size %}
 {% if posts_count > 0 %}
-<h1>recent articles</h1>
+<h1>Recent Posts</h1>
     <div class="post-links">
       {% for post in paginator.posts %}
         <div class="post-link-wrapper">
@@ -41,3 +75,23 @@ layout: default
 {% else %}
 <h2>no posts yet.</h2>
 {% endif %}
+
+<script>
+  const buttonRight1 = document.getElementById('slideRight1');
+  const buttonLeft1 = document.getElementById('slideLeft1');
+  const buttonRight2 = document.getElementById('slideRight2');
+  const buttonLeft2 = document.getElementById('slideLeft2');
+
+  buttonRight1.onclick = function () {
+    document.getElementById('carousel-body1').scrollLeft += 200;
+  };
+  buttonLeft1.onclick = function () {
+    document.getElementById('carousel-body1').scrollLeft -= 200;
+  };
+  buttonRight2.onclick = function () {
+    document.getElementById('carousel-body2').scrollLeft += 200;
+  };
+  buttonLeft2.onclick = function () {
+    document.getElementById('carousel-body2').scrollLeft -= 200;
+  };
+</script>

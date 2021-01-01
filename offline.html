@@ -1,0 +1,39 @@
+---
+layout: default
+title: offline
+---
+
+<style type="text/css" media="screen">
+  .container {
+    margin: 10px auto;
+    max-width: 600px;
+    text-align: center;
+    align-items: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  h1 {
+    font-size: 4em;
+    line-height: 1;
+    letter-spacing: -1px;
+  }
+  .flex{
+    display: flex;
+    flex-direction: column;
+  }
+  .toggleWrapper{
+    margin-left: auto;
+  }
+</style>
+<div class="flex">
+{%- include theme-toggle.html -%}
+<div class="container">
+  <h1>Offline</h1>
+
+  <p><strong>You are offline</strong></p>
+  <p>Check your internet connection or click try again 👇👇</p>
+  <button class="btn" onclick="location.reload();return false;">Try Again</button>
+</div>
+
+</div>

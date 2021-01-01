@@ -2,15 +2,21 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% comment %} <link rel="canonical" href="https://hackersjugad.tech"/> {% endcomment %}
   {%- seo -%}
+  <meta name="apple-mobile-web-app-status-bar" content="#1E2227"> 
+  <meta name="theme-color" content="#1E2227"> 
+  <link rel="manifest" href="{{'manifest.json' | relative_url }}">
+  <link rel="apple-touch-icon" href="{{'assets/icon-192.png' | relative_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
   <link rel="icon" type="image/png" href="{{ "/assets/black.svg" | relative_url }}"/>
-  {%- feed_meta -%}
+  {%- comment -%}{%- feed_meta -%} {%- endcomment -%}
   {%- if jekyll.environment == 'production' and site.google_analytics -%}
     {%- include google-analytics.html -%}
   {%- endif -%}
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180273550-1"></script>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-180273550-1" ></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -18,5 +24,63 @@
 
     gtag('config', 'UA-180273550-1');
   </script>
-
+  <!-- Push Notification script Start -->
+  <!-- <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+  <script>
+    window.OneSignal = window.OneSignal || [];
+    OneSignal.push(function() {
+      OneSignal.init({
+        appId: "a092a9df-8ccd-4abf-bc9e-e60a7df7236a",
+      });
+    });
+  </script> -->
+  <!-- Push Notification script End -->
+  <!-- PWA service worker -->
+  {%- if jekyll.environment == 'production' and page.title == "Home"-%} 
+  <script> 
+  // window.addEventListener('DOMContentLoaded', (event) => {
+  //   let newWorker;
+  //   document.getElementById('notify').addEventListener('click', function(){
+  //     newWorker.postMessage({ action: 'skipWaiting' });
+  //   });
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register("{{'/sw.js' | relative_url }}").then(function(registration) {
+          // Registration was successful
+          console.log('ServiceWorker registration successful with scope: ', registration.scope);
+          // registration.addEventListener('updatefound', () => {
+          //   // An updated service worker has appeared in reg.installing!
+          //   newWorker = registration.installing;
+          //   newWorker.addEventListener('statechange', () => {
+          //     // console.log("here you are !");
+          //     // Has service worker state changed?
+          //     switch (newWorker.state) {
+          //       case 'installed':
+          //         // There is a new service worker available, show the notification
+          //         if (navigator.serviceWorker.controller) {
+          //           let notification = document.getElementById('notification');
+          //           notification.classList.add('notify');
+          //         }
+          //         break;
+          //     }
+          //   });
+          }, function(err) {
+            // registration failed :(
+            console.log('ServiceWorker registration failed: ', err);
+          });
+        });
+    //   });
+    }
+    let refreshing;
+    // The event listener that is fired when the service worker updates
+    // Here we reload the page
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (refreshing) return;
+      window.location.reload();
+      refreshing = true;
+    });
+  // });
+    </script>
+  {% endif %}
+  <!-- PWA service worker end -->
 </head>

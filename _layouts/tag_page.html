@@ -4,6 +4,7 @@ layout: default
 {% unless site.dash.show_author == true %}
   {% include author.html %}
 {% endunless %}
+{%- include theme-toggle.html -%}
 <h1 class="post-title">articles tagged with <a class="tag" href="/tag/{{ page.tag }}/">{{ page.tag }}</a></h1>
   <div class="post-links">
   {% for post in site.posts %}

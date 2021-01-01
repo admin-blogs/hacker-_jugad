@@ -1,0 +1,28 @@
+---
+layout: default
+title: Web-Series
+search_file: search_series.json
+---
+{% unless site.dash.show_author == false %}
+  {% include author.html %}
+{% endunless %}
+<h1>Series</h1>
+<!--page_header-->
+<div class="main">
+    <ul class="cards">
+    {% for series in site.data.series %}
+    <!--split-->
+    <li class="card-item">
+        {% assign url = '/assets/thumbs/series/' | append:series.img %}
+        <div class="card">
+          <div class="card_image"><img src="{{ url | relative_url}}"></div>
+          <div class="card_content">
+            <h2 title="{{series.name}}">{{series.name | truncate: 25, '...'}}</h2>
+            <a class="btn card_btn" href="{{series.url | relative_url}}">Watch Now</a>
+          </div>
+        </div>
+    </li>
+    {% endfor %}
+    </ul>
+</div>
+<!--page_footer-->

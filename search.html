@@ -1,0 +1,35 @@
+---
+layout: default
+title: Search
+---
+
+<style>
+*{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+</style>
+
+{% unless site.dash.show_author == false %}
+  {% include author.html %}
+{% endunless %}
+
+{% comment %} <!-- Html Elements for Search -->
+<div id="search-container">
+<input type="text" id="search-input" placeholder="search...">
+<ul id="results-container" class=""></ul>
+</div>
+<br>
+<br>
+
+<!-- Script pointing to search-script.js -->
+<script src='{{"/assets/js/search-script.js" | relative_url}}' type="text/javascript"></script>
+
+<!-- Configuration -->
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+</script> {% endcomment %}

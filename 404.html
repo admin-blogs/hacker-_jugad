@@ -1,5 +1,6 @@
 ---
 layout: default
+title: "Page not found"
 ---
 
 <style type="text/css" media="screen">
@@ -16,6 +17,10 @@ layout: default
     letter-spacing: -1px;
   }
 </style>
+
+{% unless site.dash.show_author == false %}
+  {% include author.html %}
+{% endunless %}
 
 <div class="container">
   <h1>404</h1>

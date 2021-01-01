@@ -1,9 +1,17 @@
 title: Hacker's Jugad
-author: Hackers Jugad
+author: hackers jugad
 email: hackersjugad@gmail.com
-description: > # this means to ignore newlines until "show_exerpts:"
-  Hi there, We provide <strong>web-series, movies</strong> download links, blogs and video tutorials on <strong>hacking, cyber security, linux, unix, and windows</strong> tips and triks. You can request content by going to <strong><a href='/request'>Request content</a></strong> page. You can search content by clicking on related tag, all tags are available on the bottom of the site. 
+description:
+  > # this means to ignore newlines until "show_exerpts:"# With hacker's jugad you can watch latest movies and web series online without any ads.
+  Hi there, We provide latest <strong>web-series, movies</strong> online without any ads. You can also request content with <strong><a href="/request">Request 
+  content</a></strong> page. You can list content by clicking on related tag, all tags are 
+  available on the bottom of the site.
 show_excerpts: false # set to true to show excerpts on the homepage
+# baseurl: "https://hackersjugad.github.io"
+url: "https://hackersjugad.tech"
+
+# where to write site
+#destination: "../site"
 
 paginate: 10
 paginate_path: "/blog/page:num/"
@@ -12,7 +20,7 @@ tag_permalink_style: pretty
 tag_page_layout: tag_page
 tag_page_dir: tag
 
-# jekyll-dash date format
+# date format
 # refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
 dash:
   date_format: "%b %-d, %Y"
@@ -34,34 +42,43 @@ dash:
 
   animation_speed: 50
 
+#optimization
+#compress html
+compress_html:
+  clippings: all
+  comments: ["<!-- ", " -->", "// "]
+  endings: all
+  blanklines: false
+  profile: true
+  startings: [html, head, body]
+
+# compress sass
+sass:
+  style: compressed
+
 # Build settings
 theme: jekyll-dash
 
 plugins:
- - jekyll-feed
- - jekyll-seo-tag
- - jekyll-paginate
- - liquid-md5
- - jekyll/tagging
- - jekyll-sitemap
- - jekyll-paginate-content
- 
+  # - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - liquid-md5
+  - jekyll/tagging
+  - jekyll-sitemap
+  - jekyll-paginate-content
+
 # Replaces the default avatar provider (gravatar)
 #avatar_source: github
 #github_username: bitbrain
 
-
 collections:
   books:
     output: true
-  mirzapur:
-    output: true
-  scam1992:
-    output: true
   movies:
     output: true
- 
-
+  series:
+    output: true
 # paginate_content:
 #   debug: true
 #   collections: books, posts

@@ -1,13 +1,16 @@
 ---
 layout: default
+title: Credits
 ---
 
-
+{% unless site.dash.show_author == false %}
+  {% include author.html %}
+{% endunless %}
 
 <div class="post">
   <h1 class="post-title">Credits</h1>
   <p>A special thanks to <strong><a href="http://github.com" target="_blank">GitHub</a></strong> for providing great hosting service And to all the creators and contributers of <a href="http://jekyllrb.com" target="_blank">jekyll</a> for providing a great tool.</p>
-  <p>We also like to say thanks to <a href="https://github.com/bitbrain">Miguel Gonzalez Sanchez</a> for providing such a good theme.</p>
+  <p>We also like to say thanks to <a href="https://github.com/bitbrain">Miguel Gonzalez Sanchez</a> for providing such a good base theme.</p>
   <br>
   <p><a href="{{ "/" | relative_url }}">Go To Home</a></p>
 </div>
